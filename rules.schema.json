@@ -1,0 +1,1916 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/superbmilestonedev/restocalc-rules/main/rules.schema.json",
+  "title": "RestoCalc rules",
+  "description": "Every legal and market value used by the RestoCalc apps (iOS and Android). Numbers are decimal strings. See spec/README.md.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "rulesVersion",
+    "publishedAt",
+    "countries"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "rulesVersion": {
+      "description": "YYYY.MM.DD, optionally .N for a second release the same day. Compared numerically part by part.",
+      "type": "string",
+      "pattern": "^[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}(\\.[0-9]+)?$"
+    },
+    "publishedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "disclaimer": {
+      "type": "string"
+    },
+    "validation": {
+      "description": "Sanity bounds for accepting an update. Apps trust only the bundled copy's bounds; the publisher uses the published copy's.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxRelativeChange": {
+          "type": "object",
+          "required": [
+            "default"
+          ],
+          "additionalProperties": {
+            "$ref": "#/$defs/decimal"
+          }
+        },
+        "percentRange": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "min": {
+              "$ref": "#/$defs/decimal"
+            },
+            "max": {
+              "$ref": "#/$defs/decimal"
+            }
+          }
+        }
+      }
+    },
+    "countries": {
+      "type": "object",
+      "required": [
+        "ph",
+        "us",
+        "ae",
+        "sa",
+        "ca",
+        "sg",
+        "au",
+        "hk",
+        "gb",
+        "my",
+        "world"
+      ],
+      "propertyNames": {
+        "pattern": "^[a-z]{2,5}$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/country"
+      }
+    }
+  },
+  "$defs": {
+    "decimal": {
+      "description": "A decimal number as a string: \"12\", \"0.25\", \"14.975\". No exponents, grouping or leading +.",
+      "type": "string",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+    },
+    "day": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "unit": {
+      "enum": [
+        "percent",
+        "currency",
+        "currencyPerHour",
+        "currencyPerDay",
+        "currencyPerKWh",
+        "hours",
+        "days",
+        "multiplier",
+        "boolean",
+        "table",
+        "list",
+        "text"
+      ]
+    },
+    "value": {
+      "description": "Rule values: decimal strings or text, booleans, lists and objects. JSON numbers and null are not allowed.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/value"
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "entry": {
+      "description": "One dated value of a rule.",
+      "type": "object",
+      "required": [
+        "value",
+        "unit",
+        "sources",
+        "effective",
+        "verified"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/value"
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "effective": {
+          "$ref": "#/$defs/day",
+          "description": "First day (device-local) this value applies."
+        },
+        "verified": {
+          "$ref": "#/$defs/day",
+          "description": "When this value was last checked against the sources."
+        },
+        "notes": {
+          "type": "string"
+        },
+        "allowLargeChange": {
+          "type": "boolean",
+          "description": "A reviewed change that may exceed validation.maxRelativeChange."
+        }
+      }
+    },
+    "schedule": {
+      "description": "One entry, or a list of entries (a schedule). The entry in effect is the latest whose effective date is on or before the day; before the first, the earliest.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/entry"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/entry"
+          }
+        }
+      ]
+    },
+    "decimalEntry": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/entry"
+        },
+        {
+          "properties": {
+            "value": {
+              "$ref": "#/$defs/decimal"
+            }
+          }
+        }
+      ]
+    },
+    "decimalRule": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/decimalEntry"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/decimalEntry"
+          }
+        }
+      ]
+    },
+    "booleanEntry": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/entry"
+        },
+        {
+          "properties": {
+            "value": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "booleanRule": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/booleanEntry"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/booleanEntry"
+          }
+        }
+      ]
+    },
+    "decimalListEntry": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/entry"
+        },
+        {
+          "properties": {
+            "value": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/decimal"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "decimalListRule": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/decimalListEntry"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/decimalListEntry"
+          }
+        }
+      ]
+    },
+    "denominations": {
+      "type": "object",
+      "required": [
+        "notes",
+        "coins"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/decimal"
+          }
+        },
+        "coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/decimal"
+          }
+        }
+      }
+    },
+    "cashRoundingValue": {
+      "type": "object",
+      "required": [
+        "mode",
+        "step"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "none",
+            "required",
+            "optional"
+          ]
+        },
+        "step": {
+          "$ref": "#/$defs/decimal"
+        }
+      }
+    },
+    "overtimeValue": {
+      "type": "object",
+      "required": [
+        "weeklyHours",
+        "multiplier",
+        "secondTier"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "weeklyHours": {
+          "$ref": "#/$defs/decimal"
+        },
+        "multiplier": {
+          "$ref": "#/$defs/decimal"
+        },
+        "secondTier": {
+          "type": "object",
+          "required": [
+            "enabled",
+            "hours",
+            "multiplier"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "hours": {
+              "$ref": "#/$defs/decimal"
+            },
+            "multiplier": {
+              "$ref": "#/$defs/decimal"
+            }
+          }
+        }
+      }
+    },
+    "taxLine": {
+      "type": "object",
+      "required": [
+        "name",
+        "ratePercent"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ratePercent": {
+          "$ref": "#/$defs/decimal"
+        }
+      }
+    },
+    "mealTaxValue": {
+      "type": "object",
+      "required": [
+        "label",
+        "lines"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "lines": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/taxLine"
+          }
+        },
+        "smallOrderRebate": {
+          "type": "object",
+          "required": [
+            "maxAmount",
+            "label",
+            "lines"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "maxAmount": {
+              "$ref": "#/$defs/decimal"
+            },
+            "label": {
+              "type": "string"
+            },
+            "lines": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/taxLine"
+              }
+            }
+          }
+        }
+      }
+    },
+    "provincialOvertimeValue": {
+      "type": "object",
+      "required": [
+        "weeklyHours",
+        "multiplier"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "dailyHours": {
+          "$ref": "#/$defs/decimal"
+        },
+        "weeklyHours": {
+          "$ref": "#/$defs/decimal"
+        },
+        "multiplier": {
+          "$ref": "#/$defs/decimal"
+        },
+        "doubleTimeAfterDailyHours": {
+          "$ref": "#/$defs/decimal"
+        },
+        "doubleTimeMultiplier": {
+          "$ref": "#/$defs/decimal"
+        },
+        "overtimeOnMinimumWage": {
+          "type": "boolean"
+        }
+      }
+    },
+    "vacationPayValue": {
+      "type": "object",
+      "required": [
+        "basis",
+        "steps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "enum": [
+            "vacationYear",
+            "anniversary",
+            "whenEarned",
+            "unspecified"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "fromYears"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "fromYears": {
+                "$ref": "#/$defs/decimal"
+              },
+              "payPercent": {
+                "$ref": "#/$defs/decimal"
+              },
+              "weeksOfPay": {
+                "$ref": "#/$defs/decimal"
+              }
+            },
+            "oneOf": [
+              {
+                "required": [
+                  "payPercent"
+                ]
+              },
+              {
+                "required": [
+                  "weeksOfPay"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "bracketsValue": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "over",
+          "base",
+          "ratePercent"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "over": {
+            "$ref": "#/$defs/decimal"
+          },
+          "base": {
+            "$ref": "#/$defs/decimal"
+          },
+          "ratePercent": {
+            "$ref": "#/$defs/decimal"
+          }
+        }
+      }
+    },
+    "thresholdValue": {
+      "type": "object",
+      "required": [
+        "amount"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "$ref": "#/$defs/decimal"
+        }
+      }
+    },
+    "cashRoundingRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/cashRoundingValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/cashRoundingValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "denominationsRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/denominations"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/denominations"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "overtimeRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/overtimeValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/overtimeValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "thresholdRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/thresholdValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/thresholdValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "mealTaxRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/mealTaxValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/mealTaxValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "provincialOvertimeRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/provincialOvertimeValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/provincialOvertimeValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vacationPayRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/vacationPayValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/vacationPayValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bracketsRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/bracketsValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/bracketsValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "name",
+        "flag",
+        "summary",
+        "taxName",
+        "taxShortName",
+        "voltage",
+        "usesUSCustomaryUnits",
+        "favoriteCurrencies"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "flag": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string",
+          "description": "{taxRate} and {serviceCharge} are replaced with the rates in effect, e.g. \"12%\"."
+        },
+        "currency": {
+          "type": "object",
+          "required": [
+            "code",
+            "symbol",
+            "decimals"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "decimals": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4
+            }
+          }
+        },
+        "currencyFromDevice": {
+          "type": "boolean"
+        },
+        "taxName": {
+          "type": "string"
+        },
+        "taxShortName": {
+          "type": "string"
+        },
+        "voltage": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 250
+        },
+        "usesUSCustomaryUnits": {
+          "type": "boolean"
+        },
+        "favoriteCurrencies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "currency"
+          ]
+        },
+        {
+          "required": [
+            "currencyFromDevice"
+          ],
+          "properties": {
+            "currencyFromDevice": {
+              "const": true
+            }
+          }
+        }
+      ]
+    },
+    "paymentProvidersValue": {
+      "description": "Which providers the card tools list, in order, and the payment methods with their own rates. \"other\" is reserved for the app's own \"Other\" provider.",
+      "type": "object",
+      "required": [
+        "taxOnFees",
+        "terminal",
+        "terminalMethods",
+        "online",
+        "onlineMethods"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "taxOnFees": {
+          "type": "boolean",
+          "description": "Payment fees carry the country's VAT, so the tools can add it on top."
+        },
+        "terminal": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9]*$",
+            "not": {
+              "const": "other"
+            }
+          }
+        },
+        "terminalMethods": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9]*$"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "online": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9]*$",
+            "not": {
+              "const": "other"
+            }
+          }
+        },
+        "onlineMethods": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9]*$"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "paymentProvidersRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/paymentProvidersValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/paymentProvidersValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "paymentPrice": {
+      "description": "fee = max(sale × ratePercent ÷ 100, minimum) + fixed",
+      "type": "object",
+      "required": [
+        "ratePercent"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ratePercent": {
+          "$ref": "#/$defs/decimal"
+        },
+        "fixed": {
+          "$ref": "#/$defs/decimal"
+        },
+        "minimum": {
+          "$ref": "#/$defs/decimal"
+        }
+      }
+    },
+    "paymentProviderValue": {
+      "description": "A card terminal, QR or online payment provider. Empty prices means the provider doesn't publish rates.",
+      "type": "object",
+      "required": [
+        "name",
+        "tax",
+        "prices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tax": {
+          "enum": [
+            "included",
+            "excluded",
+            "notStated"
+          ],
+          "description": "Whether the published rates include the country's VAT."
+        },
+        "monthlyFee": {
+          "$ref": "#/$defs/decimal"
+        },
+        "processingFee": {
+          "$ref": "#/$defs/decimal",
+          "description": "Added to every sale (Xendit's processing fee)."
+        },
+        "ratesFrom": {
+          "type": "string",
+          "description": "Another provider of the same kind whose rates this one uses; prices must then be empty."
+        },
+        "prices": {
+          "type": "object",
+          "description": "By method id from the kind's methods.",
+          "additionalProperties": {
+            "$ref": "#/$defs/paymentPrice"
+          }
+        }
+      }
+    },
+    "paymentProviderRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/paymentProviderValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/paymentProviderValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "paymentSurchargeValue": {
+      "type": "object",
+      "required": [
+        "status",
+        "summary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "limited",
+            "banned",
+            "contract",
+            "unverified",
+            "varies"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "description": "One plain line; \"{cap}\" is replaced with capPercent (or the country's card surcharge cap) as \"3%\"."
+        },
+        "capPercent": {
+          "$ref": "#/$defs/decimal"
+        }
+      }
+    },
+    "paymentSurchargeRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/paymentSurchargeValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/paymentSurchargeValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "paymentWithholdingValue": {
+      "type": "object",
+      "required": [
+        "ratePercent",
+        "exemptionThreshold"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ratePercent": {
+          "$ref": "#/$defs/decimal"
+        },
+        "exemptionThreshold": {
+          "$ref": "#/$defs/decimal"
+        }
+      }
+    },
+    "paymentWithholdingRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/paymentWithholdingValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/paymentWithholdingValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "deliveryPlan": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "deliveryPercent": {
+          "$ref": "#/$defs/decimal"
+        },
+        "pickupPercent": {
+          "$ref": "#/$defs/decimal"
+        },
+        "selfDeliveryPercent": {
+          "$ref": "#/$defs/decimal"
+        },
+        "monthlyFee": {
+          "$ref": "#/$defs/decimal"
+        }
+      }
+    },
+    "deliveryAppValue": {
+      "description": "One delivery or online-ordering app (delivery.<app id>). A plan without a rate for an order type means the rate isn't published.",
+      "type": "object",
+      "required": [
+        "name",
+        "kind",
+        "rateStatus",
+        "rateNote",
+        "orderTypes",
+        "plans",
+        "defaultPlan",
+        "commissionBase",
+        "paymentPercent",
+        "paymentFixed",
+        "perOrderFee",
+        "basis",
+        "sourceName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "marketplace",
+            "subscription"
+          ]
+        },
+        "rateStatus": {
+          "enum": [
+            "official",
+            "typical",
+            "reported",
+            "average",
+            "notPublished"
+          ]
+        },
+        "rateNote": {
+          "type": "string"
+        },
+        "orderTypes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "delivery",
+              "pickup",
+              "selfDelivery"
+            ]
+          }
+        },
+        "orderTypeNotes": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "delivery": {
+              "type": "string"
+            },
+            "pickup": {
+              "type": "string"
+            },
+            "selfDelivery": {
+              "type": "string"
+            }
+          }
+        },
+        "plans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/deliveryPlan"
+          }
+        },
+        "defaultPlan": {
+          "type": "string"
+        },
+        "commissionBase": {
+          "enum": [
+            "afterPromo",
+            "fullPrice"
+          ]
+        },
+        "commissionBaseExcludesTax": {
+          "type": "boolean"
+        },
+        "paymentPercent": {
+          "$ref": "#/$defs/decimal"
+        },
+        "paymentFixed": {
+          "$ref": "#/$defs/decimal"
+        },
+        "paymentNote": {
+          "type": "string"
+        },
+        "perOrderFee": {
+          "$ref": "#/$defs/decimal"
+        },
+        "offerFee": {
+          "$ref": "#/$defs/decimal"
+        },
+        "monthlyFee": {
+          "$ref": "#/$defs/decimal"
+        },
+        "guestFeePercent": {
+          "$ref": "#/$defs/decimal"
+        },
+        "compareWith": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "basis": {
+          "type": "string"
+        },
+        "sourceName": {
+          "type": "string"
+        }
+      }
+    },
+    "deliveryTaxesValue": {
+      "description": "Tax added on app fees (delivery.taxes). No feeTaxPercent: the Settings rate, or in Canada the province's feeTaxProvinceLines. No appPricesIncludeTax: the 'menu prices include tax' setting.",
+      "type": "object",
+      "required": [
+        "feeTaxName",
+        "feeTaxAddedByDefault",
+        "feeTaxClaimable"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "feeTaxName": {
+          "type": "string"
+        },
+        "feeTaxPercent": {
+          "$ref": "#/$defs/decimal"
+        },
+        "feeTaxProvinceLines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "feeTaxAddedByDefault": {
+          "type": "boolean"
+        },
+        "feeTaxClaimable": {
+          "type": "boolean"
+        },
+        "appPricesIncludeTax": {
+          "type": "boolean"
+        }
+      }
+    },
+    "deliveryCityCapsValue": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "deliveryPercent",
+          "note"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "deliveryPercent": {
+            "$ref": "#/$defs/decimal"
+          },
+          "pickupPercent": {
+            "$ref": "#/$defs/decimal"
+          },
+          "processingPercent": {
+            "$ref": "#/$defs/decimal"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "deliveryAppRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/deliveryAppValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/deliveryAppValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "deliveryTaxesRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/deliveryTaxesValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/deliveryTaxesValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "deliveryCityCapsRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/deliveryCityCapsValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/deliveryCityCapsValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "openingFactors": {
+      "description": "Option id → group id → multiplier on that group's share (a missing group is 1).",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/$defs/decimal"
+        }
+      }
+    },
+    "openingGuideValue": {
+      "description": "world opening.guide: usual share of the opening cost per budget group and concept (see spec/README.md).",
+      "type": "object",
+      "required": [
+        "basis",
+        "baseDepositMonths",
+        "groups",
+        "concepts",
+        "service",
+        "menu",
+        "space"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "type": "string"
+        },
+        "baseDepositMonths": {
+          "$ref": "#/$defs/decimal"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "concepts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "baseService",
+              "ranges"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "baseService": {
+                "type": "string"
+              },
+              "baseSpace": {
+                "type": "string"
+              },
+              "ranges": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "required": [
+                    "lowPercent",
+                    "highPercent"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "lowPercent": {
+                      "$ref": "#/$defs/decimal"
+                    },
+                    "highPercent": {
+                      "$ref": "#/$defs/decimal"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "service": {
+          "$ref": "#/$defs/openingFactors"
+        },
+        "menu": {
+          "$ref": "#/$defs/openingFactors"
+        },
+        "space": {
+          "$ref": "#/$defs/openingFactors"
+        }
+      }
+    },
+    "openingGuideRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/openingGuideValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/openingGuideValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "openingPermitsValue": {
+      "description": "opening.permits: the country's registrations and permits for the Opening budget tool, in order. The app adds Other.",
+      "type": "object",
+      "required": [
+        "items"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "caption",
+              "fee"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^(?!other$)[a-z][A-Za-z0-9]*$"
+              },
+              "name": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "fee": {
+                "enum": [
+                  "official",
+                  "varies",
+                  "free"
+                ]
+              }
+            }
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "openingPermitsRule": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/entry"
+            },
+            {
+              "properties": {
+                "value": {
+                  "$ref": "#/$defs/openingPermitsValue"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/entry"
+              },
+              {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/openingPermitsValue"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "country": {
+      "type": "object",
+      "required": [
+        "meta",
+        "rules"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "meta": {
+          "$ref": "#/$defs/meta"
+        },
+        "rules": {
+          "type": "object",
+          "required": [
+            "taxRate",
+            "pricesIncludeTax",
+            "serviceChargeDefault",
+            "taxOnServiceCharge",
+            "tipPresets",
+            "tipDefault",
+            "tipOnPreTax",
+            "cashRounding",
+            "denominations",
+            "electricityRate",
+            "overtime",
+            "payments.providers",
+            "payments.surcharge"
+          ],
+          "properties": {
+            "taxRate": {
+              "$ref": "#/$defs/decimalRule"
+            },
+            "pricesIncludeTax": {
+              "$ref": "#/$defs/booleanRule"
+            },
+            "serviceChargeDefault": {
+              "$ref": "#/$defs/decimalRule"
+            },
+            "taxOnServiceCharge": {
+              "$ref": "#/$defs/booleanRule"
+            },
+            "tipPresets": {
+              "$ref": "#/$defs/decimalListRule"
+            },
+            "tipDefault": {
+              "$ref": "#/$defs/decimalRule"
+            },
+            "tipOnPreTax": {
+              "$ref": "#/$defs/booleanRule"
+            },
+            "cashRounding": {
+              "$ref": "#/$defs/cashRoundingRule"
+            },
+            "denominations": {
+              "$ref": "#/$defs/denominationsRule"
+            },
+            "electricityRate": {
+              "$ref": "#/$defs/decimalRule"
+            },
+            "overtime": {
+              "$ref": "#/$defs/overtimeRule"
+            },
+            "taxRegistrationThreshold": {
+              "$ref": "#/$defs/thresholdRule"
+            },
+            "percentageTax": {
+              "$ref": "#/$defs/decimalRule"
+            },
+            "withholdingTax.monthly": {
+              "$ref": "#/$defs/bracketsRule"
+            },
+            "incomeTax.graduated": {
+              "$ref": "#/$defs/bracketsRule"
+            },
+            "payments.providers": {
+              "$ref": "#/$defs/paymentProvidersRule"
+            },
+            "payments.surcharge": {
+              "$ref": "#/$defs/paymentSurchargeRule"
+            },
+            "payments.withholding": {
+              "$ref": "#/$defs/paymentWithholdingRule"
+            }
+          },
+          "patternProperties": {
+            "^mealTax\\.[a-z]{2}$": {
+              "$ref": "#/$defs/mealTaxRule"
+            },
+            "^provincialOvertime\\.[a-z]+$": {
+              "$ref": "#/$defs/provincialOvertimeRule"
+            },
+            "^vacationPay\\.[a-z]+$": {
+              "$ref": "#/$defs/vacationPayRule"
+            },
+            "^delivery\\.(?!apps$|taxes$|withholding$|cityCaps$|baseTier$)[a-z][A-Za-z0-9]*$": {
+              "$ref": "#/$defs/deliveryAppRule"
+            },
+            "^delivery\\.taxes$": {
+              "$ref": "#/$defs/deliveryTaxesRule"
+            },
+            "^delivery\\.cityCaps$": {
+              "$ref": "#/$defs/deliveryCityCapsRule"
+            },
+            "^minimumWage\\.(nb|nl|federal)$": {
+              "$ref": "#/$defs/decimalRule"
+            },
+            "^payments\\.(terminal|online)\\.[A-Za-z][A-Za-z0-9]*$": {
+              "$ref": "#/$defs/paymentProviderRule"
+            },
+            "^opening\\.guide$": {
+              "$ref": "#/$defs/openingGuideRule"
+            },
+            "^opening\\.permits$": {
+              "$ref": "#/$defs/openingPermitsRule"
+            }
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/schedule"
+          },
+          "propertyNames": {
+            "pattern": "^[A-Za-z][A-Za-z0-9]*(\\.[A-Za-z][A-Za-z0-9]*)*$"
+          }
+        }
+      }
+    }
+  }
+}
