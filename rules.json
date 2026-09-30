@@ -983,6 +983,96 @@
           },
           "verified": "2026-09-30"
         },
+        "bar.kegs": {
+          "effective": "2026-09-30",
+          "notes": "50 L is standard; several brands fill 49.5 L.",
+          "sources": [
+            {
+              "title": "Keg sizes",
+              "url": "https://en.wikipedia.org/wiki/Keg"
+            },
+            {
+              "title": "Liquor Traders: Heineken 49.5 L keg",
+              "url": "https://liquortraders.com.au/product/heineken-49-5l-keg/"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "sizes": [
+              {
+                "id": "keg50",
+                "liters": "50",
+                "name": "50 L"
+              },
+              {
+                "id": "keg49",
+                "liters": "49.5",
+                "name": "49.5 L"
+              },
+              {
+                "id": "keg30",
+                "liters": "30",
+                "name": "30 L"
+              },
+              {
+                "id": "keg20",
+                "liters": "20",
+                "name": "20 L"
+              }
+            ]
+          },
+          "verified": "2026-09-30"
+        },
+        "bar.measures": {
+          "effective": "2026-09-30",
+          "notes": "Standard drink = 10 g of alcohol; 30 ml nip of spirits = 1. No prescribed beer measure sizes since the National Trade Measurement Regulations 2009; common glasses: schooner 425 ml, pot/middy 285 ml, pint 570 ml (SA: schooner 285 ml, pint 425 ml).",
+          "sources": [
+            {
+              "title": "healthdirect: standard drinks",
+              "url": "https://www.healthdirect.gov.au/know-your-standard-drinks-infographic"
+            },
+            {
+              "title": "Beer in Australia: glass sizes",
+              "url": "https://en.wikipedia.org/wiki/Beer_in_Australia"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "beer": [
+              {
+                "ml": "425",
+                "name": "Schooner"
+              },
+              {
+                "ml": "285",
+                "name": "Pot"
+              },
+              {
+                "ml": "570",
+                "name": "Pint"
+              }
+            ],
+            "bottles": [
+              "700",
+              "1000"
+            ],
+            "coffeeBags": [
+              "250",
+              "500",
+              "1000"
+            ],
+            "legal": false,
+            "milkPerDrink": "180",
+            "rule": "No legal spirit measure; a 30 ml nip is one standard drink (10 g of alcohol). Beer glass names aren't set sizes (in South Australia a schooner is 285 ml).",
+            "spirit": [
+              "30",
+              "60"
+            ],
+            "spiritDefault": "30",
+            "unit": "ml"
+          },
+          "verified": "2026-09-30"
+        },
         "cashRounding": {
           "effective": "2026-01-01",
           "notes": "Cash totals round to the nearest 5 cents; card payments aren't rounded.",
@@ -1740,6 +1830,98 @@
               "20",
               "22"
             ]
+          },
+          "verified": "2026-09-30"
+        },
+        "bar.kegs": {
+          "effective": "2026-09-30",
+          "notes": "58.6 L is Canada's standard large keg; 30 L and 20 L are common; 50 L for imports.",
+          "sources": [
+            {
+              "title": "Wellington Brewery: kegs",
+              "url": "https://www.wellingtonbrewery.ca/blog/welly-kegs-and-party-packs"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "sizes": [
+              {
+                "id": "keg58",
+                "liters": "58.6",
+                "name": "58.6 L"
+              },
+              {
+                "id": "keg50",
+                "liters": "50",
+                "name": "50 L"
+              },
+              {
+                "id": "keg30",
+                "liters": "30",
+                "name": "30 L"
+              },
+              {
+                "id": "keg20",
+                "liters": "20",
+                "name": "20 L"
+              }
+            ]
+          },
+          "verified": "2026-09-30"
+        },
+        "bar.measures": {
+          "effective": "2026-09-30",
+          "notes": "Standard drink 43 ml of 40% spirits (CCSA). Ontario's minimum-price standard serving is 29 ml (1 oz) of spirits, 341 ml beer, 142 ml wine. BC: at most 3 fl oz (85 ml) of spirits and 24 oz of draught per person at a time. Bottles: 750 ml, 1.14 L and 1.75 L. Milk per drink about 250 ml for a 12 oz latte (estimate).",
+          "sources": [
+            {
+              "title": "CCSA: Canada's Guidance on Alcohol and Health, standard drinks",
+              "url": "https://www.ccsa.ca/sites/default/files/2025-05/CGAH-Standard-Drinks-Poster-en.pdf"
+            },
+            {
+              "title": "BC Liquor Primary Terms and Conditions handbook",
+              "url": "https://www2.gov.bc.ca/assets/gov/employment-business-and-economic-development/business-management/liquor-regulation-licensing/guides-and-manuals/liquorprimary-handbook.pdf"
+            },
+            {
+              "title": "AGCO: pricing and promotion of liquor (standard servings)",
+              "url": "https://www.agco.ca/en/alcohol/appendix-2-registrars-guidelines-advertising-and-promotion/pricing-and-promotion-liquor"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "beer": [
+              {
+                "ml": "568.26125",
+                "name": "568 ml"
+              },
+              {
+                "ml": "473.176473",
+                "name": "473 ml"
+              },
+              {
+                "ml": "341",
+                "name": "341 ml"
+              }
+            ],
+            "bottles": [
+              "750",
+              "1140",
+              "1750"
+            ],
+            "coffeeBags": [
+              "250",
+              "500",
+              "1000"
+            ],
+            "legal": false,
+            "milkPerDrink": "250",
+            "rule": "No national pour size; a standard drink is 43 ml (1.5 oz) of spirits. Provinces set limits, such as 3 oz of spirits per person at a time in BC.",
+            "spirit": [
+              "29",
+              "43",
+              "57"
+            ],
+            "spiritDefault": "29",
+            "unit": "ml"
           },
           "verified": "2026-09-30"
         },
@@ -3466,6 +3648,103 @@
         "voltage": 230
       },
       "rules": {
+        "bar.kegs": {
+          "effective": "2026-09-30",
+          "notes": "Keg beer: 11 gallon (50 L), 30 L and 20 L. Cask ale: firkin = 9 imperial gallons = 40.91 L (72 pints; about 66 saleable after sediment).",
+          "sources": [
+            {
+              "title": "Keg sizes",
+              "url": "https://en.wikipedia.org/wiki/Keg"
+            },
+            {
+              "title": "English brewery cask units",
+              "url": "https://en.wikipedia.org/wiki/English_brewery_cask_units"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "sizes": [
+              {
+                "id": "keg50",
+                "liters": "50",
+                "name": "50 L"
+              },
+              {
+                "id": "keg30",
+                "liters": "30",
+                "name": "30 L"
+              },
+              {
+                "id": "keg20",
+                "liters": "20",
+                "name": "20 L"
+              },
+              {
+                "id": "firkin",
+                "liters": "40.91",
+                "name": "Firkin"
+              }
+            ]
+          },
+          "verified": "2026-09-30"
+        },
+        "bar.measures": {
+          "effective": "2026-09-30",
+          "notes": "SI 1988/2039 art. 2 (beer and cider: 1/3, 1/2, 2/3 pint or multiples of 1/2 pint), art. 3 (gin, rum, vodka, whisky: 25 ml or 35 ml or multiples; one quantity throughout the premises; notice displayed; not when mixed with 2 or more other liquids or at the customer's request), art. 5A (wine by the glass 125 ml and 175 ml or multiples, from SI 2011/2331). England and Wales mandatory condition: ½ pint, 25 ml or 35 ml and 125 ml measures must be available and shown. 700 ml is the usual spirit bottle (EU/UK sizes don't include 750 ml).",
+          "sources": [
+            {
+              "title": "Weights and Measures (Intoxicating Liquor) Order 1988",
+              "url": "https://www.legislation.gov.uk/uksi/1988/2039/article/3"
+            },
+            {
+              "title": "Licensing Act 2003 (Mandatory Licensing Conditions) Order 2010, Schedule para 4",
+              "url": "https://www.legislation.gov.uk/uksi/2010/860/schedule"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "beer": [
+              {
+                "ml": "568.26125",
+                "name": "Pint"
+              },
+              {
+                "ml": "284.130625",
+                "name": "Half pint"
+              },
+              {
+                "ml": "378.8408",
+                "name": "⅔ pint"
+              },
+              {
+                "ml": "189.4204",
+                "name": "⅓ pint"
+              }
+            ],
+            "bottles": [
+              "700",
+              "1000",
+              "1500"
+            ],
+            "coffeeBags": [
+              "250",
+              "500",
+              "1000"
+            ],
+            "legal": true,
+            "milkPerDrink": "180",
+            "rule": "Law in Great Britain: gin, rum, vodka and whisky are sold in 25 ml or 35 ml measures or multiples, the same measure throughout, with a notice; draught beer in ⅓, ½ or ⅔ pints or multiples of ½ pint; wine by the glass in 125 ml or 175 ml or multiples.",
+            "spirit": [
+              "25",
+              "35",
+              "50",
+              "70"
+            ],
+            "spiritDefault": "25",
+            "unit": "ml"
+          },
+          "verified": "2026-09-30"
+        },
         "businessRates.england": {
           "effective": "2026-04-01",
           "notes": "England, 2026/27. Bill = rateable value × multiplier (pounds per £1), minus reliefs. Qualifying retail, hospitality and leisure (restaurants, takeaways, cafés, pubs, bars; wholly or mainly used for it): 38.2p under £51,000, 43.0p from £51,000 to 499,999. Other properties: 43.2p and 48.0p. Every property at £500,000 or more: 50.8p. Small business rate relief: 100% up to £12,000, tapering to 0 at £15,000, for a business's only property or where the others are each £2,899 or less and together under £20,000 (£28,000 in London). The 40% RHL relief (2025/26) ended on 31 Mar 2026; in 2026/27 only pubs and live music venues get 15% relief. Transitional relief caps 2026/27 rises at +5% (RV up to £20,000, £28,000 London), +15% (up to £100,000) and +30% (above); Supporting Small Business relief caps rises at the higher of £800 or the transitional cap. Scotland, Wales and Northern Ireland differ.",
@@ -4883,6 +5162,36 @@
         "voltage": 230
       },
       "rules": {
+        "bar.kegs": {
+          "effective": "2026-09-30",
+          "notes": "Carlsberg draught 30 L and Heineken 20 L kegs (retail listings); 50 L Euro kegs also exist.",
+          "sources": [
+            {
+              "title": "RestoCalc default"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "sizes": [
+              {
+                "id": "keg30",
+                "liters": "30",
+                "name": "30 L"
+              },
+              {
+                "id": "keg20",
+                "liters": "20",
+                "name": "20 L"
+              },
+              {
+                "id": "keg50",
+                "liters": "50",
+                "name": "50 L"
+              }
+            ]
+          },
+          "verified": "2026-09-30"
+        },
         "cashRounding": {
           "effective": "2026-01-01",
           "notes": "Bank Negara Malaysia rounding mechanism: cash totals round to the nearest 5 sen.",
@@ -5619,6 +5928,41 @@
         "voltage": 220
       },
       "rules": {
+        "bar.kegs": {
+          "effective": "2026-09-30",
+          "notes": "San Miguel draught (Pale Pilsen, San Mig Light) is sold in 15, 30 and 50 L kegs per event menus and dealer listings; craft brewers use 20, 30 and 50 L. No official San Miguel Brewery spec page was found.",
+          "sources": [
+            {
+              "title": "RestoCalc default"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "sizes": [
+              {
+                "id": "keg30",
+                "liters": "30",
+                "name": "30 L"
+              },
+              {
+                "id": "keg50",
+                "liters": "50",
+                "name": "50 L"
+              },
+              {
+                "id": "keg20",
+                "liters": "20",
+                "name": "20 L"
+              },
+              {
+                "id": "keg15",
+                "liters": "15",
+                "name": "15 L"
+              }
+            ]
+          },
+          "verified": "2026-09-30"
+        },
         "basicNecessities": {
           "effective": "2024-03-25",
           "notes": "Seniors and PWDs: 5% off basic necessities and prime commodities, VAT not removed, at most PHP 125 of discount per calendar week (PHP 2,500 of purchases).",
@@ -7912,6 +8256,36 @@
         "voltage": 230
       },
       "rules": {
+        "bar.kegs": {
+          "effective": "2026-09-30",
+          "notes": "Tiger and Heineken are sold in 20 L and 30 L kegs (retail and event listings); 50 L Euro kegs also exist.",
+          "sources": [
+            {
+              "title": "RestoCalc default"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "sizes": [
+              {
+                "id": "keg30",
+                "liters": "30",
+                "name": "30 L"
+              },
+              {
+                "id": "keg20",
+                "liters": "20",
+                "name": "20 L"
+              },
+              {
+                "id": "keg50",
+                "liters": "50",
+                "name": "50 L"
+              }
+            ]
+          },
+          "verified": "2026-09-30"
+        },
         "cashRounding": {
           "effective": "2026-01-01",
           "notes": "Singapore has no rounding rule; each outlet decides (off, round down, or nearest 5 cents in Settings).",
@@ -8633,6 +9007,103 @@
               "20",
               "22"
             ]
+          },
+          "verified": "2026-09-30"
+        },
+        "bar.kegs": {
+          "effective": "2026-09-30",
+          "notes": "US beer barrel = 31 US gallons (27 CFR 25.11): half barrel 15.5 gal, quarter (pony, slim quarter) 7.75 gal, sixth (sixtel) 5.17 gal; 50 L Euro kegs for imports.",
+          "sources": [
+            {
+              "title": "27 CFR 25.11: a barrel of beer is 31 US gallons",
+              "url": "https://www.law.cornell.edu/cfr/text/27/25.11"
+            },
+            {
+              "title": "Keg sizes",
+              "url": "https://en.wikipedia.org/wiki/Keg"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "sizes": [
+              {
+                "id": "halfBarrel",
+                "liters": "58.67",
+                "name": "½ barrel",
+                "usGallons": "15.5"
+              },
+              {
+                "id": "quarterBarrel",
+                "liters": "29.34",
+                "name": "¼ barrel",
+                "usGallons": "7.75"
+              },
+              {
+                "id": "sixthBarrel",
+                "liters": "19.57",
+                "name": "⅙ barrel",
+                "usGallons": "5.17"
+              },
+              {
+                "id": "keg50",
+                "liters": "50",
+                "name": "50 L",
+                "usGallons": "13.21"
+              }
+            ]
+          },
+          "verified": "2026-09-30"
+        },
+        "bar.measures": {
+          "effective": "2026-09-30",
+          "notes": "No federal legal pour; states regulate (e.g. Utah Code 32B-5-304: primary spirit at most 1.5 oz per drink). Standard drink 14 g alcohol = 1.5 fl oz of 80-proof spirits. 750 ml is the usual bottle (TTB standards of fill also allow 1 L and 1.75 L). Coffee bags in pounds (5 lb wholesale). Milk per drink: about 10 fl oz for a 12 oz latte (estimate).",
+          "sources": [
+            {
+              "title": "NIAAA: What is a standard drink?",
+              "url": "https://rethinkingdrinking.niaaa.nih.gov/how-much-too-much/whats-standard-drink"
+            },
+            {
+              "title": "27 CFR 5.203 Standards of fill for distilled spirits",
+              "url": "https://www.law.cornell.edu/cfr/text/27/5.203"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "beer": [
+              {
+                "ml": "473.176473",
+                "name": "16 oz"
+              },
+              {
+                "ml": "354.8823547",
+                "name": "12 oz"
+              },
+              {
+                "ml": "591.4705913",
+                "name": "20 oz"
+              }
+            ],
+            "bottles": [
+              "750",
+              "1000",
+              "1750"
+            ],
+            "coffeeBags": [
+              "1",
+              "2",
+              "5"
+            ],
+            "legal": false,
+            "milkPerDrink": "10",
+            "rule": "No federal pour size; 1.5 fl oz of spirits is a standard drink (NIAAA) and the usual pour. Some states set limits.",
+            "spirit": [
+              "1",
+              "1.25",
+              "1.5",
+              "2"
+            ],
+            "spiritDefault": "1.5",
+            "unit": "usFlOz"
           },
           "verified": "2026-09-30"
         },
@@ -9957,6 +10428,122 @@
         "voltage": 230
       },
       "rules": {
+        "bar.defaults": {
+          "effective": "2026-09-30",
+          "notes": "Industry rules of thumb, editable in the tools. Pour cost targets: blended 18–24%, liquor 15–20%, draught 20–25%, wine by the glass 26–32% (bar-industry guides). Draught: 95%+ keg yield achievable (Bar-i, ~200 audits a month, 2018). Espresso: INEI certified single 7 g ± 0.5 for 25 ml; SCA 2017 survey: over 75% of baristas use 18 g double baskets. Coffee waste about 10% (roaster estimate). Milk waste: cafés commonly lose 10–20% of milk bought (vendor estimates); 10% default.",
+          "sources": [
+            {
+              "title": "Bar-i: normal waste level for draft beer",
+              "url": "https://blog.bar-i.com/what-is-the-normal-waste-level-for-draft-beer"
+            },
+            {
+              "title": "SCA: Defining the ever-changing espresso",
+              "url": "https://sca.coffee/sca-news/25-magazine/issue-3/defining-ever-changing-espresso-25-magazine-issue-3-zyx36"
+            },
+            {
+              "title": "Bridge Coffee Roasters: grinder wastage",
+              "url": "https://bridgecoffeeroasters.co.uk/blog/coffee/grinderwastage"
+            },
+            {
+              "title": "DoorDash for Merchants: liquor cost percentage",
+              "url": "https://merchants.doordash.com/en-us/blog/liquor-cost-percentage"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "coffeeWastePercent": "10",
+            "draughtWasteBasis": "A well-run draught system sells 95% or more of each keg (Bar-i audits of US bars); weeks with line cleaning lose about 2 points more, and bars that don't track it often lose 15–25%.",
+            "draughtWastePercent": "5",
+            "espressoBasis": "A classic Italian single espresso uses about 7 g; most cafés now use 18 g double baskets (SCA barista survey). Roasters put coffee lost to dialing in, purging and remakes at about 10%.",
+            "espressoDoseGrams": "18",
+            "milkWastePercent": "10",
+            "pourCostBasis": "Many bars aim for 18–24% overall: spirits about 15–20%, draught beer 20–25%, wine by the glass 26–32%.",
+            "pourCostTargetPercent": "20"
+          },
+          "verified": "2026-09-30"
+        },
+        "bar.kegs": {
+          "effective": "2026-09-30",
+          "notes": "Common keg sizes: 50 L, 30 L and 20 L.",
+          "sources": [
+            {
+              "title": "Euro keg sizes (DIN 6647)",
+              "url": "https://en.wikipedia.org/wiki/Keg"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "sizes": [
+              {
+                "id": "keg50",
+                "liters": "50",
+                "name": "50 L"
+              },
+              {
+                "id": "keg30",
+                "liters": "30",
+                "name": "30 L"
+              },
+              {
+                "id": "keg20",
+                "liters": "20",
+                "name": "20 L"
+              }
+            ]
+          },
+          "verified": "2026-09-30"
+        },
+        "bar.measures": {
+          "effective": "2026-09-30",
+          "notes": "Market defaults, not law. No law setting pour sizes was found for Singapore, Hong Kong, Malaysia, the Philippines or the UAE; 30 ml is the usual pour (Singapore and Hong Kong health sites count a 30 ml shot as one standard drink). Bottles: 700 ml (EU and UK imports), 750 ml (US imports) and 1 L. Milk per drink: a latte uses about 180–220 ml (Australian café guide).",
+          "sources": [
+            {
+              "title": "RestoCalc default"
+            },
+            {
+              "title": "HealthHub Singapore: a 30 ml shot of spirits is one standard drink",
+              "url": "https://www.healthhub.sg/well-being-and-lifestyle/food-diet-and-nutrition/alcohol--hazards-and-benefits"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "beer": [
+              {
+                "ml": "330",
+                "name": "330 ml"
+              },
+              {
+                "ml": "400",
+                "name": "400 ml"
+              },
+              {
+                "ml": "500",
+                "name": "500 ml"
+              }
+            ],
+            "bottles": [
+              "700",
+              "750",
+              "1000"
+            ],
+            "coffeeBags": [
+              "250",
+              "500",
+              "1000"
+            ],
+            "legal": false,
+            "milkPerDrink": "180",
+            "rule": "No legal spirit measure; 30 ml is the usual pour.",
+            "spirit": [
+              "30",
+              "45",
+              "60"
+            ],
+            "spiritDefault": "30",
+            "unit": "ml"
+          },
+          "verified": "2026-09-30"
+        },
         "cashRounding": {
           "effective": "2026-01-01",
           "notes": "mode: none (exact change), required (always round cash totals to step), optional (a Settings choice).",
@@ -10314,6 +10901,424 @@
           ],
           "unit": "currencyPerKWh",
           "value": "0",
+          "verified": "2026-09-30"
+        },
+        "kitchen.pans": {
+          "effective": "2026-09-30",
+          "notes": "Brim capacities. GN (liters): Vogue stainless listing (1/1 × 100 mm from Cairn's chart, ~14 L); other makers differ by up to ~15% (FSM, Rieber quotes to the stacking shoulder). US (quarts): Vollrath Super Pan V 22-gauge; the ninth pan at 2½ in is Vollrath's 2 in pan (0.6 qt, Cambro's 2½ in is also 0.6 qt). 1/9 pans at 150 mm / 6 in are left out: most stainless lines don't make them. Fill 85% of brim (industry guidance). US-style pans are the default in the US and Canada.",
+          "sources": [
+            {
+              "title": "EN 631-1 Gastronorm container sizes",
+              "url": "https://en.wikipedia.org/wiki/Gastronorm"
+            },
+            {
+              "title": "Vogue stainless steel gastronorm containers (brim capacities)",
+              "url": "https://www.caterkwik.co.uk/shop/shop-by-brand/vogue/vogue-stainless-steel-gastronorm-containers/"
+            },
+            {
+              "title": "Vollrath Super Pan V stainless steel steam table pans (brimful capacities)",
+              "url": "https://www.vollrathfoodservice.com/products/smallwares/steam-table-pans-accessories/stainless-steel-steam-table-pans/super-pan-v-stainless-steel-steam-table-pans/30262"
+            },
+            {
+              "title": "Chef's Resources: steam table pan capacity",
+              "url": "https://www.chefs-resources.com/culinary-conversions-calculators-and-capacities/steamtable-pan-capacity/"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "Capacities are filled to the brim and vary by brand by up to about 15%; many kitchens fill to about 85%.",
+            "fillPercent": "85",
+            "gn": {
+              "defaultDepth": "100",
+              "defaultSize": "1/1",
+              "depths": [
+                {
+                  "id": "65",
+                  "name": "65 mm"
+                },
+                {
+                  "id": "100",
+                  "name": "100 mm"
+                },
+                {
+                  "id": "150",
+                  "name": "150 mm"
+                }
+              ],
+              "sizes": [
+                {
+                  "capacities": {
+                    "100": "14",
+                    "150": "20",
+                    "65": "9"
+                  },
+                  "id": "1/1",
+                  "name": "1/1"
+                },
+                {
+                  "capacities": {
+                    "100": "6.2",
+                    "150": "9",
+                    "65": "4"
+                  },
+                  "id": "1/2",
+                  "name": "1/2"
+                },
+                {
+                  "capacities": {
+                    "100": "3.7",
+                    "150": "5.7",
+                    "65": "2.5"
+                  },
+                  "id": "1/3",
+                  "name": "1/3"
+                },
+                {
+                  "capacities": {
+                    "100": "2.5",
+                    "150": "4",
+                    "65": "1.7"
+                  },
+                  "id": "1/4",
+                  "name": "1/4"
+                },
+                {
+                  "capacities": {
+                    "100": "1.7",
+                    "150": "2.2",
+                    "65": "1"
+                  },
+                  "id": "1/6",
+                  "name": "1/6"
+                },
+                {
+                  "capacities": {
+                    "100": "0.8",
+                    "65": "0.6"
+                  },
+                  "id": "1/9",
+                  "name": "1/9"
+                }
+              ],
+              "unit": "liter"
+            },
+            "portionFlOz": "6",
+            "portionMl": "150",
+            "portionPresetsFlOz": [
+              "2",
+              "4",
+              "6",
+              "8"
+            ],
+            "portionPresetsMl": [
+              "100",
+              "150",
+              "200",
+              "250"
+            ],
+            "us": {
+              "defaultDepth": "4",
+              "defaultSize": "full",
+              "depths": [
+                {
+                  "id": "2.5",
+                  "name": "2½ in"
+                },
+                {
+                  "id": "4",
+                  "name": "4 in"
+                },
+                {
+                  "id": "6",
+                  "name": "6 in"
+                }
+              ],
+              "sizes": [
+                {
+                  "capacities": {
+                    "2.5": "8.3",
+                    "4": "14",
+                    "6": "21"
+                  },
+                  "id": "full",
+                  "name": "Full"
+                },
+                {
+                  "capacities": {
+                    "2.5": "4.3",
+                    "4": "6.7",
+                    "6": "10"
+                  },
+                  "id": "half",
+                  "name": "Half"
+                },
+                {
+                  "capacities": {
+                    "2.5": "2.6",
+                    "4": "4.1",
+                    "6": "6.1"
+                  },
+                  "id": "third",
+                  "name": "Third"
+                },
+                {
+                  "capacities": {
+                    "2.5": "1.8",
+                    "4": "3",
+                    "6": "4.5"
+                  },
+                  "id": "fourth",
+                  "name": "Fourth"
+                },
+                {
+                  "capacities": {
+                    "2.5": "1.2",
+                    "4": "1.8",
+                    "6": "2.7"
+                  },
+                  "id": "sixth",
+                  "name": "Sixth"
+                },
+                {
+                  "capacities": {
+                    "2.5": "0.6",
+                    "4": "1.1"
+                  },
+                  "id": "ninth",
+                  "name": "Ninth"
+                }
+              ],
+              "unit": "usQuart"
+            },
+            "usCountries": [
+              "us",
+              "ca"
+            ]
+          },
+          "verified": "2026-09-30"
+        },
+        "manager.events": {
+          "effective": "2026-09-30",
+          "notes": "Event and catering quote defaults. Catering targets a 25–30% food cost, tighter than the 28–35% of a restaurant menu (Katalyst). Deposits run 25–50% at signing, often non-refundable, and half is the most common single answer (Evolved Catering; Tableview). Service charge and tax come from the country settings.",
+          "sources": [
+            {
+              "title": "Katalyst, How to price catering orders (Jul 2026)",
+              "url": "https://www.katalystos.com/blog/how-to-price-catering-orders-and-contracts"
+            },
+            {
+              "title": "Evolved Catering, How much deposit do caterers require?",
+              "url": "https://evolvedeventscatering.com/blog/catering-deposit-guide/"
+            },
+            {
+              "title": "Tableview, Restaurant catering and private events (Jun 2026)",
+              "url": "https://www.tableview.com/blog/restaurant-catering-private-events/"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "Catering aims for 25–30% food cost; deposits run 25–50%, half is most common (Katalyst, Evolved Catering)",
+            "depositPercent": "50",
+            "targetCostPercent": "30"
+          },
+          "verified": "2026-09-30"
+        },
+        "manager.forecast": {
+          "effective": "2026-09-30",
+          "notes": "Sales forecast and prep list: weights for the same weekday in the last four weeks, newest first ((W1×1 + W2×2 + W3×3 + W4×4) ÷ 10 with W4 the newest, as Mise gives it), and the buffer added to prep amounts (Mise: add 10–20% on perishables after subtracting stock on hand). An empty week is skipped and its weight is shared out over the others. Event and weather adjustments are the user's own % and multiply the average, as in Mise's worked example (festival ×1.3, rain on a terrace ×0.85). Industry method, not law.",
+          "sources": [
+            {
+              "title": "Mise, How to forecast demand in restaurants (Sep 2026)",
+              "url": "https://misekit.com/en/resources/how-to-forecast-demand-in-restaurants"
+            },
+            {
+              "title": "7shifts, Restaurant forecasting guide (Feb 2025)",
+              "url": "https://www.7shifts.com/blog/restaurant-forecasting-guide/"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "Weighted average of the last 4 same weekdays, 40/30/20/10 newest first (Mise); 10% buffer, the low end of the 10–20% Mise suggests for perishables",
+            "bufferPercent": "10",
+            "weightPercents": [
+              "40",
+              "30",
+              "20",
+              "10"
+            ]
+          },
+          "verified": "2026-09-30"
+        },
+        "manager.lossCheck": {
+          "effective": "2026-09-30",
+          "notes": "When to flag an item's usage variance ((actual − expected) ÷ expected), by kind of item: food overall 1–3%, high-cost proteins under 2%, produce 3–5%, liquor 3–5% (free pouring, spills), draft beer 5–10% (foam, line cleaning) (RestaurantCalcs). Jelly: well-run operators target 2–3%; above 5% needs investigating.",
+          "sources": [
+            {
+              "title": "RestaurantCalcs, Is a 2% inventory variance bad? (Jun 2026)",
+              "url": "https://restaurantcalcs.com/blog/acceptable-inventory-variance-percentage/"
+            },
+            {
+              "title": "Jelly, Restaurant inventory variance report",
+              "url": "https://blog.getjelly.co.uk/restaurant-inventory-variance-report/"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "Acceptable variance: proteins under 2%, food 1–3%, produce and liquor 3–5%, draft beer 5–10% (RestaurantCalcs)",
+            "draftBeerPercent": "10",
+            "foodPercent": "3",
+            "liquorPercent": "5",
+            "producePercent": "5",
+            "proteinPercent": "2"
+          },
+          "verified": "2026-09-30"
+        },
+        "manager.reservations": {
+          "effective": "2026-09-30",
+          "notes": "Reservation capacity defaults. Walk-in hold by style from Resos: fine dining takes 80–100% of covers as reservations, casual 50–70% (hold 15–30% for walk-ins; its 70/15/15 rule), fast casual and bars 0–30%. No-shows: the Resos No-Show Index 2026 recorded 2.33% of 3.77 million bookings (Aug 2025–Jul 2026; US 3.17%, Canada 2.98%, UK 1.48%, Australia 1.41%). Effective capacity is typically 75–85% of seats (party size vs table size); bookings staggered in 15-minute slots.",
+          "sources": [
+            {
+              "title": "Resos Academy, Walk-ins vs reservations",
+              "url": "https://restaurantbookingsystem.com/academy/walk-ins-vs-reservations/"
+            },
+            {
+              "title": "Resos No-Show Index 2026",
+              "url": "https://resos.com/restaurant-no-show-rate/"
+            },
+            {
+              "title": "Resos Academy, Seating capacity",
+              "url": "https://restaurantbookingsystem.com/academy/glossary/seating-capacity/"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "Resos: casual books 50–70% and holds 15–30% for walk-ins, fine dining books 80–100%; no-shows 2.33% (US 3.17%); effective capacity 75–85% of seats",
+            "casualWalkInPercent": "30",
+            "fineDiningWalkInPercent": "10",
+            "noShowPercent": "3",
+            "quickServiceWalkInPercent": "70",
+            "seatsFilledPercent": "80",
+            "slotMinutes": "15"
+          },
+          "verified": "2026-09-30"
+        },
+        "manager.staffing": {
+          "effective": "2026-09-30",
+          "notes": "Covers one person handles in the busiest hour, by service style and role (0: the style doesn't use the role). RestoCalc estimates built from published ratios, which are per shift or per table and vary widely: servers 1 per 3–4 tables in fine dining, 4–6 in casual (NineGuides), about 4 tables an hour (OysterLink); busser/runner 1 per 4–6 servers in casual, 1 per 2 in fine dining (NineGuides); line cook 1 per 8–10 covers in fine dining, 15–20 casual, 25–35 quick service; dishwasher 1 per 30–40, 50–60 and 75–100 (DishwasherHero). Quick service servers are counter staff.",
+          "sources": [
+            {
+              "title": "NineGuides, Restaurant staffing ratios (Mar 2026)",
+              "url": "https://nineguides.com/staff/restaurant-staffing-ratios/"
+            },
+            {
+              "title": "OysterLink, Restaurant staffing",
+              "url": "https://oysterlink.com/spotlight/restaurant-staffing/"
+            },
+            {
+              "title": "DishwasherHero, Kitchen staffing ratios",
+              "url": "https://dishwasherhero.com/blog/kitchen-staffing-ratios-guide"
+            },
+            {
+              "title": "RestoCalc estimate"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "Estimates from published ratios: servers 4 tables an hour, 1 busser per 4 servers (2 in fine dining), cooks 1 per 10–30 covers, dishwashers 1 per 30–75",
+            "casual": {
+              "bussers": "40",
+              "cooks": "20",
+              "dishwashers": "50",
+              "runners": "40",
+              "servers": "10"
+            },
+            "fineDining": {
+              "bussers": "10",
+              "cooks": "10",
+              "dishwashers": "30",
+              "runners": "10",
+              "servers": "5"
+            },
+            "quickService": {
+              "bussers": "0",
+              "cooks": "30",
+              "dishwashers": "75",
+              "runners": "0",
+              "servers": "30"
+            }
+          },
+          "verified": "2026-09-30"
+        },
+        "manager.tipOut": {
+          "effective": "2026-09-30",
+          "notes": "Common tip-out shares in US restaurants, set by each house (no legal standard). By % of the server's sales: bussers 1–2%, bartenders 1–2%, food runners about 1%, hosts 0.5–1%; total usually 2–5% of sales. By % of tips: bussers 10–30%, bartenders 10–20%, runners 5–10%, hosts 3–5%; overall about 20–30% of tips. Who may share tips is not covered here: the tools leave managers out and point to local rules.",
+          "sources": [
+            {
+              "title": "Homebase, Tipping out (2026)",
+              "url": "https://www.joinhomebase.com/blog/tipping-out"
+            },
+            {
+              "title": "TipBud, Tip out guide",
+              "url": "https://tipbud.app/tip-out-guide"
+            },
+            {
+              "title": "Restaurant Business, Standard tip out percentages",
+              "url": "https://www.restaurantbusinessonline.com/advice-guy/standard-tip-out-percentages"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "US norms: busser 1–2% of sales or 10–30% of tips, bartender 1–2% or 10–20%, runner about 1% or 5–10% (Homebase)",
+            "salesPercents": {
+              "bartender": "1",
+              "busser": "1.5",
+              "host": "0.5",
+              "runner": "1"
+            },
+            "tipsPercents": {
+              "bartender": "10",
+              "busser": "10",
+              "host": "3",
+              "runner": "5"
+            }
+          },
+          "verified": "2026-09-30"
+        },
+        "manager.turnTimes": {
+          "effective": "2026-09-30",
+          "notes": "Default average turn time (seated to the next party seated) by service style. Resos gives typical dining times of 10–20 min for quick service, 20–35 for fast casual, 45–65 for casual dining, 70–90 for upscale casual and 90–120 for fine dining, and longer for bigger parties (casual: 2 guests 50 min, 4 guests 65, 6 guests 80, 8+ 95). RestoCalc uses the top of each table-service range to allow for clearing and resetting the table. Estimates; measure your own.",
+          "sources": [
+            {
+              "title": "Resos Academy, Average dining time",
+              "url": "https://restaurantbookingsystem.com/academy/glossary/average-dining-time/"
+            },
+            {
+              "title": "RestoCalc estimate"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "Typical dining times: fast casual 20–35 min, casual 45–65, fine dining 90–120 (Resos), plus time to reset the table",
+            "casualMinutes": "60",
+            "fineDiningMinutes": "120",
+            "quickServiceMinutes": "30"
+          },
+          "verified": "2026-09-30"
+        },
+        "manager.waitQuote": {
+          "effective": "2026-09-30",
+          "notes": "Wait quote = parties ahead that need the same table size ÷ tables of that size × average turn time for that size (Tableview), less the tables already on the check. Tableview: pad the quote 5–10 minutes in the guest's favour (their example: 21 minutes is quoted as 25). RestoCalc adds 5 minutes and rounds to the nearest 5.",
+          "sources": [
+            {
+              "title": "Tableview, Restaurant waitlist management",
+              "url": "https://www.tableview.com/blog/restaurant-waitlist-management/"
+            }
+          ],
+          "unit": "table",
+          "value": {
+            "basis": "Parties ahead ÷ tables × turn time, padded 5 minutes (Tableview: pad 5–10)",
+            "padMinutes": "5",
+            "roundToMinutes": "5"
+          },
           "verified": "2026-09-30"
         },
         "opening.contingency": {
@@ -11098,8 +12103,8 @@
     }
   },
   "disclaimer": "Estimates only; not tax or legal advice. Every value lists its official source, effective date and last-verified date.",
-  "publishedAt": "2026-09-30T10:37:00Z",
-  "rulesVersion": "2026.09.30.1",
+  "publishedAt": "2026-09-30T12:01:00Z",
+  "rulesVersion": "2026.09.30.2",
   "schemaVersion": 1,
   "validation": {
     "maxRelativeChange": {
