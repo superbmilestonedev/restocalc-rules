@@ -5813,15 +5813,23 @@
         },
         "delivery.withholding": {
           "effective": "2024-01-11",
-          "notes": "RR 16-2023: e-marketplaces and digital financial services providers withhold 1% on one-half of gross remittances (0.5%). Gross remittance excludes discounts, delivery fees, VAT and the platform's fees: (food after your promo ÷ 1.12 if VAT-registered − app fees incl. VAT) × 0.5%. Not withheld when total remittances from all platforms are ₱500,000 or less a year and a BIR-received sworn declaration is filed (RMC 8-2024). Creditable (BIR Form 2307). Grab began deducting on 15 Jul 2024.",
+          "notes": "Food delivery apps are e-marketplaces under Sec. 2.57.2(X) (RR 16-2023; ATC WI820/WC820). RR 5-2025 (in force 14 March 2025) sets the rate at 0.5% of gross remittances; before, it was 1% of one-half, the same amount. Gross remittance excludes returns and discounts, separately billed delivery fees, VAT and the platform's fees: (food after your promo ÷ 1.12 if VAT-registered − app fees incl. VAT) × 0.5%. Not withheld while total remittances from all platforms stay at ₱500,000 or less a year and a BIR-received sworn declaration is filed, renewed by 20 January (RMC 8-2024). Creditable (BIR Form 2307). Grab began deducting on 15 Jul 2024; still in force in 2026 (RMC 55-2026).",
           "sources": [
             {
-              "title": "BIR Revenue Regulations No. 16-2023",
+              "title": "BIR Revenue Regulations No. 5-2025: 1/2% on gross amounts, Sec. 2.57.2(H) and (X), in force 14 March 2025",
+              "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RR%20No.%205-2025.pdf"
+            },
+            {
+              "title": "BIR Revenue Regulations No. 16-2023: e-marketplaces and digital financial services providers, Sec. 2.57.2(X)",
               "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RR%2016-2023.pdf"
             },
             {
-              "title": "BIR Revenue Memorandum Circular No. 8-2024",
+              "title": "BIR Revenue Memorandum Circular No. 8-2024: ₱500,000 threshold across all platforms, sworn declaration",
               "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RMC%20No.%208-2024.pdf"
+            },
+            {
+              "title": "BIR Revenue Memorandum Circular No. 55-2026 (digest): e-marketplace and DFSP withholding still in force",
+              "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RMC%20No.%2055-2026%20Digest.pdf"
             },
             {
               "title": "Grab PH merchant help centre: withholding tax advisory and sample computations",
@@ -6330,8 +6338,9 @@
           "verified": "2026-09-30"
         },
         "payments.providers": {
+          "allowLargeChange": true,
           "effective": "2026-09-30",
-          "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Payment fees carry 12% VAT, so the tools can add it when a provider quotes rates before VAT.",
+          "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Payment fees carry 12% VAT, so the tools can add it when a provider quotes rates before VAT. Cards are split into credit and debit because withholding differs (payments.withholding); providers publish one card rate for both (Maya lists Visa, Mastercard, JCB, Amex and BancNet at the same rate), so Debit card uses the card prices (pricesFrom).",
           "sources": [
             {
               "title": "RestoCalc default: providers and payment methods shown in the card tools"
@@ -6348,7 +6357,12 @@
             "onlineMethods": [
               {
                 "id": "card",
-                "name": "Card"
+                "name": "Credit card"
+              },
+              {
+                "id": "debitCard",
+                "name": "Debit card",
+                "pricesFrom": "card"
               },
               {
                 "id": "gcash",
@@ -6397,7 +6411,12 @@
             "terminalMethods": [
               {
                 "id": "card",
-                "name": "Card"
+                "name": "Credit card"
+              },
+              {
+                "id": "debitCard",
+                "name": "Debit card",
+                "pricesFrom": "card"
               },
               {
                 "id": "qrph",
@@ -6602,21 +6621,47 @@
           "verified": "2026-09-30"
         },
         "payments.withholding": {
+          "allowLargeChange": true,
           "effective": "2024-01-11",
-          "notes": "1% on one-half of gross remittances (0.5% effective), creditable against income tax; the payer issues BIR Form 2307. E-marketplaces and digital financial services providers, including QR and e-wallet acquirers (RR 16-2023, effective 11 January 2024): no withholding when total remittances from all of them are ₱500,000 or less a year and a BIR-received sworn declaration is filed. Credit card companies withhold under RR 2-98 Sec. 2.57.2(H) as amended by RR 11-2018, which has no threshold; whether bank card settlements get the ₱500,000 exemption is unclear. The app applies the rate to the gross sale.",
+          "notes": "Creditable income tax withheld from payouts; the payer issues BIR Form 2307. RR 5-2025 (in force 14 March 2025) sets the rate at 0.5% of the gross amount; before, it was 1% of one-half, the same amount. Credit card companies paying merchants, Sec. 2.57.2(H) (ATC WI156/WC156): 0.5% of the gross sale, before the merchant discount (interpreted from 'gross amounts paid'), with no threshold. Debit card, QR Ph, e-wallet and other digital financial services payouts, Sec. 2.57.2(X) from RR 16-2023 (ATC WI830/WC830): 0.5% of the gross remittance, which excludes returns and discounts, separately billed delivery fees and the provider's own fees; nothing is withheld while total remittances from all e-marketplaces and providers stay at ₱500,000 or less a year and a BIR-received sworn declaration is filed, renewed by 20 January (RMC 8-2024). Still in force in 2026 (RMC 55-2026). exemptionMethods lists the (X) methods, which use otherBase and the exemption; every other method is a credit card payout and uses creditCardBase. Unclear: whether a bank acquirer's credit card payouts fall under (X) instead; the app uses (H).",
           "sources": [
             {
-              "title": "BIR Revenue Regulations No. 16-2023",
+              "title": "BIR Revenue Regulations No. 5-2025: 1/2% on gross amounts, Sec. 2.57.2(H) and (X), in force 14 March 2025",
+              "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RR%20No.%205-2025.pdf"
+            },
+            {
+              "title": "BIR Revenue Regulations No. 16-2023: e-marketplaces and digital financial services providers, Sec. 2.57.2(X)",
               "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RR%2016-2023.pdf"
             },
             {
-              "title": "BIR Revenue Memorandum Circular No. 8-2024",
+              "title": "BIR Revenue Memorandum Circular No. 8-2024: ₱500,000 threshold across all platforms, sworn declaration",
               "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RMC%20No.%208-2024.pdf"
+            },
+            {
+              "title": "BIR Revenue Memorandum Circular No. 55-2026 (digest): e-marketplace and DFSP withholding still in force",
+              "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RMC%20No.%2055-2026%20Digest.pdf"
+            },
+            {
+              "title": "BIR Revenue Memorandum Order No. 18-2025 (digest): ATCs WI156/WC156, WI820/WC820, WI830/WC830 at 1/2%",
+              "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RMO%20No.%2018-2025%20Digest.pdf"
             }
           ],
           "unit": "table",
           "value": {
+            "creditCardBase": "gross",
+            "exemptionMethods": [
+              "debitCard",
+              "qrph",
+              "gcash",
+              "maya",
+              "grabPay",
+              "shopeePay",
+              "onlineBanking",
+              "sevenEleven",
+              "billEase"
+            ],
             "exemptionThreshold": "500000",
+            "otherBase": "netOfProviderFees",
             "ratePercent": "0.5"
           },
           "verified": "2026-09-30"
@@ -6789,7 +6834,7 @@
         },
         "rent.percentageRentExample": {
           "effective": "2026-09-30",
-          "notes": "Example only. No mall operator (Ayala, FBDC, SM, Robinsons, Megaworld, Vista, Shangri-La) publishes percentage-rent rates, CUSA or aircon rates. The structure is official (Robinsons Land 17-A): a percentage of monthly gross sales or the minimum rent, whichever is higher, revised yearly. Whether gross sales include VAT depends on the lease.",
+          "notes": "Example only. No mall operator (Ayala, FBDC, SM, Robinsons, Megaworld, Vista, Shangri-La) publishes percentage-rent rates, CUSA or aircon rates. The structure is official (Robinsons Land 17-A): a percentage of monthly gross sales or the minimum rent, whichever is higher, revised yearly. Whether gross sales include VAT depends on the lease; commentary says malls usually exclude VAT, so the app takes VAT out unless you say the lease counts it.",
           "sources": [
             {
               "title": "RestoCalc default: the rate an owner reported for FBDC/Ayala (not published by any mall)"
@@ -6818,11 +6863,23 @@
         },
         "rent.withholding": {
           "effective": "1998-04-17",
-          "notes": "Expanded withholding tax on real property rent: the tenant withholds 5% of the rent excluding VAT (ATC WI100 individuals, WC100 corporations) and gives the lessor BIR Form 2307. The PHP 10,000 a year threshold is for personal-property rentals only. Unclear: whether CUSA, aircon and utility recharges also need withholding (practice varies: 5% if billed as rent, 2% as services, none for at-cost utilities), and whether every sole-proprietor tenant must withhold. The app defaults to rent only and says to confirm with an accountant.",
+          "notes": "Expanded withholding tax on real property rent, Sec. 2.57.2(B)(1): the tenant withholds 5% of the rent, base and percentage rent, before VAT when the lessor is VAT-registered and of the gross billing when not (RMC 72-2004 A1 and A2; ATC WI100 individuals, WC100 corporations), and gives the lessor BIR Form 2307. Every business payor withholds, sole proprietors included (RR 2-98 Sec. 2.57.3(B)), whether or not a top withholding agent; the ₱10,000 a year threshold is for personal property only. The obligation arises when rent is payable, accrued or invoiced, whichever comes first (RR 4-2024). CUSA, aircon and marketing fund: no BIR ruling found; not withheld by an ordinary payor, 2% by a top withholding agent (expandedWithholding.servicesPercent), 5% if the lease bills them as rent. Electricity and water passed through at cost aren't the lessor's income (CTA Case No. 8956), so never 5%; a top withholding agent withholds 2% and issues the 2307 in the utility company's name (RMC 72-2004 A10).",
           "sources": [
             {
-              "title": "Revenue Regulations No. 2-98 Sec. 2.57.2(C), as amended (Bureau of Internal Revenue)",
-              "url": "https://www.bir.gov.ph/"
+              "title": "BIR digest of RR 11-2018: Sec. 2.57.2(B)(1) real property rent at 5%, Sec. 2.57.3 withholding agents",
+              "url": "https://bir-cdn.bir.gov.ph/local/pdf/Digest%20RR%2011-2018.pdf"
+            },
+            {
+              "title": "BIR Revenue Regulations No. 4-2024 (EOPT): withholding arises when payable, accrued or invoiced",
+              "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RR%204-2024%20(final).pdf"
+            },
+            {
+              "title": "BIR Revenue Memorandum Circular No. 72-2004: EWT base before VAT (A1, A2); utilities (A10) (text on a mirror)",
+              "url": "https://philtax.blogspot.com/2004/11/revenue-memorandum-circular-no-72-2004.html"
+            },
+            {
+              "title": "Court of Tax Appeals Case No. 8956, Opulent Landowners v. CIR (2017): utility reimbursements aren't the lessor's income",
+              "url": "https://cta.judiciary.gov.ph/home/download/7848b90228e2744f7fe71c69ed696065"
             },
             {
               "title": "Grab Help Centre: BIR Form 2307 ATC list (WC100/WI100 rentals at 5%)",
@@ -11041,8 +11098,8 @@
     }
   },
   "disclaimer": "Estimates only; not tax or legal advice. Every value lists its official source, effective date and last-verified date.",
-  "publishedAt": "2026-09-30T00:00:00Z",
-  "rulesVersion": "2026.09.30",
+  "publishedAt": "2026-09-30T10:37:00Z",
+  "rulesVersion": "2026.09.30.1",
   "schemaVersion": 1,
   "validation": {
     "maxRelativeChange": {

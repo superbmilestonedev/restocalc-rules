@@ -969,6 +969,11 @@
               "name": {
                 "type": "string",
                 "minLength": 1
+              },
+              "pricesFrom": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9]*$",
+                "description": "Another method in this list, with no pricesFrom of its own, whose published prices this method uses when a provider lists none for it (Philippine debit cards use the card rate)."
               }
             }
           }
@@ -1001,6 +1006,11 @@
               "name": {
                 "type": "string",
                 "minLength": 1
+              },
+              "pricesFrom": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9]*$",
+                "description": "Another method in this list, with no pricesFrom of its own, whose published prices this method uses when a provider lists none for it (Philippine debit cards use the card rate)."
               }
             }
           }
@@ -1203,19 +1213,45 @@
         }
       ]
     },
+    "paymentWithholdingBase": {
+      "description": "What the payout withholding rate is applied to: the whole sale (gross), or the sale less the provider's fee including VAT on it (netOfProviderFees).",
+      "enum": [
+        "gross",
+        "netOfProviderFees"
+      ]
+    },
     "paymentWithholdingValue": {
+      "description": "Philippine payout withholding (RR 5-2025). Methods in exemptionMethods are Sec. 2.57.2(X) payouts (debit card, QR Ph, e-wallets): withheld on otherBase, and not at all under exemptionThreshold a year with a sworn declaration. Every other method is a credit card payout (Sec. 2.57.2(H)): withheld on creditCardBase, no exemption.",
       "type": "object",
       "required": [
         "ratePercent",
-        "exemptionThreshold"
+        "creditCardBase",
+        "otherBase",
+        "exemptionThreshold",
+        "exemptionMethods"
       ],
       "additionalProperties": false,
       "properties": {
         "ratePercent": {
           "$ref": "#/$defs/decimal"
         },
+        "creditCardBase": {
+          "$ref": "#/$defs/paymentWithholdingBase"
+        },
+        "otherBase": {
+          "$ref": "#/$defs/paymentWithholdingBase"
+        },
         "exemptionThreshold": {
           "$ref": "#/$defs/decimal"
+        },
+        "exemptionMethods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9]*$"
+          },
+          "uniqueItems": true,
+          "description": "Method ids from payments.providers that get otherBase and the exemption."
         }
       }
     },
