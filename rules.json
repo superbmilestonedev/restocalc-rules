@@ -30,7 +30,7 @@
           "notes": "mode: none (exact change), required (always round cash totals to step), optional (a Settings choice).",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "table",
@@ -45,7 +45,7 @@
           "notes": "Delivery apps shown for the UAE, in this order. None publishes a rate card.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "list",
@@ -612,7 +612,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Card processing charged as an explicit fee carries 5% VAT.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             },
             {
               "title": "FTA: VAT Executive Regulation, Art. 42 (explicit fees are taxable)",
@@ -788,7 +788,7 @@
           "notes": "No service charge by default: standalone restaurants can't add one (see dubaiHotel for hotels and licensed outlets).",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -839,7 +839,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -851,7 +851,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -863,7 +863,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -1094,7 +1094,7 @@
           "notes": "Delivery apps shown for Australia, in this order. Menulog stopped taking orders on 26 Nov 2025 and Deliveroo left in 2022, so neither is listed.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             },
             {
               "title": "Just Eat Takeaway.com: ceasing operations in Australia (12 Nov 2025)",
@@ -1443,7 +1443,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Stripe and Zeller say their fees include GST; other pages don't say, so no GST is added.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             }
           ],
           "unit": "table",
@@ -1676,7 +1676,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -1727,7 +1727,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -1739,7 +1739,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -1751,7 +1751,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -1772,7 +1772,7 @@
               "url": "https://www.accc.gov.au/consumers/pricing/surcharges"
             },
             {
-              "title": "RestoMath default (common practice)"
+              "title": "Restaurant Calculator default (common practice)"
             }
           ],
           "unit": "table",
@@ -1818,7 +1818,7 @@
               "url": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/special-payments/tips-gratuities.html"
             },
             {
-              "title": "RestoMath default (common large-party policy)"
+              "title": "Restaurant Calculator default (common large-party policy)"
             }
           ],
           "unit": "table",
@@ -1930,7 +1930,7 @@
           "notes": "Starting values for the card fees tool.",
           "sources": [
             {
-              "title": "RestoMath default (typical card processing pricing)"
+              "title": "Restaurant Calculator default (typical card processing pricing)"
             }
           ],
           "unit": "table",
@@ -1983,7 +1983,7 @@
           "notes": "Delivery apps shown for Canada, in this order. Fantuan publishes no merchant pricing and isn't listed.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "list",
@@ -2648,7 +2648,7 @@
           "notes": "Generic starting values; provinces set their own thresholds (see provincialOvertime).",
           "sources": [
             {
-              "title": "RestoMath default for the Overtime pay tool"
+              "title": "Restaurant Calculator default for the Overtime pay tool"
             }
           ],
           "unit": "table",
@@ -2738,7 +2738,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Provider pages don't say whether GST/HST is added to fees, so none is added.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             }
           ],
           "unit": "table",
@@ -3171,7 +3171,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -3208,7 +3208,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -3220,7 +3220,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -3232,7 +3232,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -3789,7 +3789,7 @@
           "notes": "mode: none (exact change), required (always round cash totals to step), optional (a Settings choice).",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "table",
@@ -3804,7 +3804,7 @@
           "notes": "Delivery apps shown for the United Kingdom, in this order.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "list",
@@ -4193,7 +4193,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Stripe Terminal is left out: its '1.4% + 10p for EEA cards' doesn't say how UK cards are classed.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             }
           ],
           "unit": "table",
@@ -4393,7 +4393,7 @@
               "url": "https://www.gov.uk/government/publications/distributing-tips-fairly-statutory-code-of-practice"
             },
             {
-              "title": "RestoMath default (common discretionary service charge)"
+              "title": "Restaurant Calculator default (common discretionary service charge)"
             }
           ],
           "unit": "percent",
@@ -4445,7 +4445,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -4457,7 +4457,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -4469,7 +4469,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -4545,7 +4545,7 @@
           "notes": "Delivery apps shown for Hong Kong, in this order. Deliveroo left Hong Kong on 7 Apr 2025.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "list",
@@ -4873,7 +4873,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Hong Kong has no VAT or GST.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             }
           ],
           "unit": "table",
@@ -5049,7 +5049,7 @@
           "notes": "Customary 10% service charge.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -5100,7 +5100,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -5112,7 +5112,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -5124,7 +5124,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -5167,7 +5167,7 @@
           "notes": "Carlsberg draught 30 L and Heineken 20 L kegs (retail listings); 50 L Euro kegs also exist.",
           "sources": [
             {
-              "title": "RestoMath default"
+              "title": "Restaurant Calculator default"
             }
           ],
           "unit": "table",
@@ -5213,7 +5213,7 @@
           "notes": "Delivery apps shown for Malaysia, in this order. airasia food left delivery in 2023.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "list",
@@ -5567,7 +5567,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. MDR and payment gateway fees are basic banking services, excluded from service tax (RMCD).",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             },
             {
               "title": "RMCD: Guide on Financial Services v2 (MDR and gateway fees excluded from service tax)",
@@ -5808,7 +5808,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -5860,7 +5860,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -5872,7 +5872,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -5884,7 +5884,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -5933,7 +5933,7 @@
           "notes": "San Miguel draught (Pale Pilsen, San Mig Light) is sold in 15, 30 and 50 L kegs per event menus and dealer listings; craft brewers use 20, 30 and 50 L. No official San Miguel Brewery spec page was found.",
           "sources": [
             {
-              "title": "RestoMath default"
+              "title": "Restaurant Calculator default"
             }
           ],
           "unit": "table",
@@ -5984,7 +5984,7 @@
           "notes": "mode: none (exact change), required (always round cash totals to step), optional (a Settings choice).",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "table",
@@ -5999,7 +5999,7 @@
           "notes": "Delivery and online apps shown for the Philippines, in this order. ShopeeFood launched in Metro Manila on 16 Sep 2026.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "list",
@@ -6490,7 +6490,7 @@
           "notes": "Generic Overtime pay tool is not shown in the Philippines; DOLE premium pay is in premiumPay.",
           "sources": [
             {
-              "title": "RestoMath default for the Overtime pay tool"
+              "title": "Restaurant Calculator default for the Overtime pay tool"
             }
           ],
           "unit": "table",
@@ -6590,7 +6590,7 @@
         },
         "payments.online.payMongo": {
           "effective": "2026-09-30",
-          "notes": "All prices exclude VAT; with 12% VAT they are round numbers (cards 3.5% + ₱15). International cards 4.02% + ₱13.39. Direct online banking (BDO, UnionBank, BPI, Landbank, Metrobank) is listed as '0.71% or ₱13.39'; RestoMath treats ₱13.39 as the minimum. No setup or monthly fee; Storefront is ₱349 a month (optional).",
+          "notes": "All prices exclude VAT; with 12% VAT they are round numbers (cards 3.5% + ₱15). International cards 4.02% + ₱13.39. Direct online banking (BDO, UnionBank, BPI, Landbank, Metrobank) is listed as '0.71% or ₱13.39'; Restaurant Calculator treats ₱13.39 as the minimum. No setup or monthly fee; Storefront is ₱349 a month (optional).",
           "sources": [
             {
               "title": "PayMongo: pricing (all prices exclude VAT)",
@@ -6687,7 +6687,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Payment fees carry 12% VAT, so the tools can add it when a provider quotes rates before VAT. Cards are split into credit and debit because withholding differs (payments.withholding); providers publish one card rate for both (Maya lists Visa, Mastercard, JCB, Amex and BancNet at the same rate), so Debit card uses the card prices (pricesFrom).",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             }
           ],
           "unit": "table",
@@ -7181,7 +7181,7 @@
           "notes": "Example only. No mall operator (Ayala, FBDC, SM, Robinsons, Megaworld, Vista, Shangri-La) publishes percentage-rent rates, CUSA or aircon rates. The structure is official (Robinsons Land 17-A): a percentage of monthly gross sales or the minimum rent, whichever is higher, revised yearly. Whether gross sales include VAT depends on the lease; commentary says malls usually exclude VAT, so the app takes VAT out unless you say the lease counts it.",
           "sources": [
             {
-              "title": "RestoMath default: the rate an owner reported for FBDC/Ayala (not published by any mall)"
+              "title": "Restaurant Calculator default: the rate an owner reported for FBDC/Ayala (not published by any mall)"
             },
             {
               "title": "Robinsons Land SEC Form 17-A FY2025, Note 34 (lease structure)",
@@ -7394,7 +7394,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -7406,7 +7406,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -7418,7 +7418,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -7507,7 +7507,7 @@
           "notes": "mode: none (exact change), required (always round cash totals to step), optional (a Settings choice).",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "table",
@@ -7522,7 +7522,7 @@
           "notes": "Delivery apps shown for Saudi Arabia, in this order. Careem wound down food delivery in Saudi Arabia (May 2026) and Shgardi stopped in Oct 2025, so neither is listed.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             },
             {
               "title": "Jawlah, 4 May 2026 (Careem winds down consumer services in Saudi Arabia)",
@@ -7984,7 +7984,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Explicit payment fees carry 15% VAT. SAMA caps mada fees at 0.8% in store and 1.75% online.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             },
             {
               "title": "SAMA Rulebook: mada POS merchant service charge caps",
@@ -8039,7 +8039,7 @@
           "notes": "No official text on card or mada surcharges was found before the research ended.",
           "sources": [
             {
-              "title": "RestoMath research, September 2026 (no SAMA or Ministry of Commerce text found)"
+              "title": "Restaurant Calculator research, September 2026 (no SAMA or Ministry of Commerce text found)"
             }
           ],
           "unit": "table",
@@ -8141,7 +8141,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -8192,7 +8192,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -8204,7 +8204,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -8216,7 +8216,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -8261,7 +8261,7 @@
           "notes": "Tiger and Heineken are sold in 20 L and 30 L kegs (retail and event listings); 50 L Euro kegs also exist.",
           "sources": [
             {
-              "title": "RestoMath default"
+              "title": "Restaurant Calculator default"
             }
           ],
           "unit": "table",
@@ -8291,7 +8291,7 @@
           "notes": "Singapore has no rounding rule; each outlet decides (off, round down, or nearest 5 cents in Settings).",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "table",
@@ -8306,7 +8306,7 @@
           "notes": "Delivery apps shown for Singapore, in this order. Deliveroo took its last Singapore orders on 4 Mar 2026 and isn't listed.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             },
             {
               "title": "DoorDash: wind-down of Deliveroo in Singapore (25 Feb 2026)",
@@ -8644,7 +8644,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. MDR is exempt from GST (IRAS); terminal rental and subscriptions normally carry 9% GST.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             },
             {
               "title": "IRAS: GST guide for the banking industry (MDR is exempt from GST)",
@@ -8835,14 +8835,14 @@
         },
         "rent.moveIn": {
           "effective": "2024-02-01",
-          "notes": "The security deposit is capped at 3 months' gross rent (base rent, service charge and A&P; projected GTO rent may count) for premises up to 5,000 sq ft on leases up to 3 years, unless a permitted deviation is filed. The tenant may give up to half as a bank guarantee. Advance rent: 1 month (RestoMath default).",
+          "notes": "The security deposit is capped at 3 months' gross rent (base rent, service charge and A&P; projected GTO rent may count) for premises up to 5,000 sq ft on leases up to 3 years, unless a permitted deviation is filed. The tenant may give up to half as a bank guarantee. Advance rent: 1 month (Restaurant Calculator default).",
           "sources": [
             {
               "title": "FTIC Code of Conduct for Leasing of Retail Premises, 3rd ed. (mandatory from 1 Feb 2024)",
               "url": "https://www.ftic.org.sg/wp-content/uploads/2024/01/Code-of-Conduct-for-Leasing-of-Retail-Premises-Version-3-dated-1-November-2023-amended-per-Corrigendum-No-1.pdf"
             },
             {
-              "title": "RestoMath default: 1 month's advance rent"
+              "title": "Restaurant Calculator default: 1 month's advance rent"
             }
           ],
           "unit": "table",
@@ -8871,7 +8871,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -8923,7 +8923,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -8935,7 +8935,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -8947,7 +8947,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -8995,7 +8995,7 @@
               "url": "https://www.irs.gov/pub/irs-drop/rr-12-18.pdf"
             },
             {
-              "title": "RestoMath default (common large-party policy)"
+              "title": "Restaurant Calculator default (common large-party policy)"
             }
           ],
           "unit": "table",
@@ -9112,7 +9112,7 @@
           "notes": "Starting values for the card fees tool.",
           "sources": [
             {
-              "title": "RestoMath default (typical card processing pricing)"
+              "title": "Restaurant Calculator default (typical card processing pricing)"
             }
           ],
           "unit": "table",
@@ -9166,7 +9166,7 @@
           "notes": "Pennies are no longer minted; rounding cash totals to 5 cents is an opt-in Settings choice (state rules vary).",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "table",
@@ -9181,7 +9181,7 @@
           "notes": "Delivery and online apps shown for the United States, in this order.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "list",
@@ -9928,7 +9928,7 @@
           "notes": "Display order of card terminal and online payment providers, and the payment methods with their own rates. Sales tax doesn't apply to processing fees.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             }
           ],
           "unit": "table",
@@ -10196,14 +10196,14 @@
         },
         "rent.moveIn": {
           "effective": "2026-09-01",
-          "notes": "Deposit: 1 month for an established tenant; a new business is often asked for 2 to 3 months plus a personal guarantee, and a startup 3 or more months or a letter of credit (one local brokerage; reported). Advance: the first month's rent (RestoMath default).",
+          "notes": "Deposit: 1 month for an established tenant; a new business is often asked for 2 to 3 months plus a personal guarantee, and a startup 3 or more months or a letter of credit (one local brokerage; reported). Advance: the first month's rent (Restaurant Calculator default).",
           "sources": [
             {
               "title": "Dean CRE: security deposits and personal guarantees",
               "url": "https://deancre.com/security-deposits-personal-guarantees-good-guy-clause/"
             },
             {
-              "title": "RestoMath default: first month's rent paid at signing"
+              "title": "Restaurant Calculator default: first month's rent paid at signing"
             }
           ],
           "unit": "table",
@@ -10298,7 +10298,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -10332,7 +10332,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -10344,7 +10344,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -10356,7 +10356,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -10498,7 +10498,7 @@
           "notes": "Market defaults, not law. No law setting pour sizes was found for Singapore, Hong Kong, Malaysia, the Philippines or the UAE; 30 ml is the usual pour (Singapore and Hong Kong health sites count a 30 ml shot as one standard drink). Bottles: 700 ml (EU and UK imports), 750 ml (US imports) and 1 L. Milk per drink: a latte uses about 180–220 ml (Australian café guide).",
           "sources": [
             {
-              "title": "RestoMath default"
+              "title": "Restaurant Calculator default"
             },
             {
               "title": "HealthHub Singapore: a 30 ml shot of spirits is one standard drink",
@@ -10549,7 +10549,7 @@
           "notes": "mode: none (exact change), required (always round cash totals to step), optional (a Settings choice).",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "table",
@@ -10564,7 +10564,7 @@
           "notes": "Rest of the world has no app presets: only the Other delivery app calculator.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "list",
@@ -10576,7 +10576,7 @@
           "notes": "No feeTaxPercent: the tax rate in Settings is used, off by default. appPricesIncludeTax is omitted: the 'menu prices include tax' setting is used.",
           "sources": [
             {
-              "title": "RestoMath default (delivery apps checked 2026-09-30)"
+              "title": "Restaurant Calculator default (delivery apps checked 2026-09-30)"
             }
           ],
           "unit": "table",
@@ -11203,7 +11203,7 @@
         },
         "manager.staffing": {
           "effective": "2026-09-30",
-          "notes": "Covers one person handles in the busiest hour, by service style and role (0: the style doesn't use the role). RestoMath estimates built from published ratios, which are per shift or per table and vary widely: servers 1 per 3–4 tables in fine dining, 4–6 in casual (NineGuides), about 4 tables an hour (OysterLink); busser/runner 1 per 4–6 servers in casual, 1 per 2 in fine dining (NineGuides); line cook 1 per 8–10 covers in fine dining, 15–20 casual, 25–35 quick service; dishwasher 1 per 30–40, 50–60 and 75–100 (DishwasherHero). Quick service servers are counter staff.",
+          "notes": "Covers one person handles in the busiest hour, by service style and role (0: the style doesn't use the role). Restaurant Calculator estimates built from published ratios, which are per shift or per table and vary widely: servers 1 per 3–4 tables in fine dining, 4–6 in casual (NineGuides), about 4 tables an hour (OysterLink); busser/runner 1 per 4–6 servers in casual, 1 per 2 in fine dining (NineGuides); line cook 1 per 8–10 covers in fine dining, 15–20 casual, 25–35 quick service; dishwasher 1 per 30–40, 50–60 and 75–100 (DishwasherHero). Quick service servers are counter staff.",
           "sources": [
             {
               "title": "NineGuides, Restaurant staffing ratios (Mar 2026)",
@@ -11218,7 +11218,7 @@
               "url": "https://dishwasherhero.com/blog/kitchen-staffing-ratios-guide"
             },
             {
-              "title": "RestoMath estimate"
+              "title": "Restaurant Calculator estimate"
             }
           ],
           "unit": "table",
@@ -11285,14 +11285,14 @@
         },
         "manager.turnTimes": {
           "effective": "2026-09-30",
-          "notes": "Default average turn time (seated to the next party seated) by service style. Resos gives typical dining times of 10–20 min for quick service, 20–35 for fast casual, 45–65 for casual dining, 70–90 for upscale casual and 90–120 for fine dining, and longer for bigger parties (casual: 2 guests 50 min, 4 guests 65, 6 guests 80, 8+ 95). RestoMath uses the top of each table-service range to allow for clearing and resetting the table. Estimates; measure your own.",
+          "notes": "Default average turn time (seated to the next party seated) by service style. Resos gives typical dining times of 10–20 min for quick service, 20–35 for fast casual, 45–65 for casual dining, 70–90 for upscale casual and 90–120 for fine dining, and longer for bigger parties (casual: 2 guests 50 min, 4 guests 65, 6 guests 80, 8+ 95). Restaurant Calculator uses the top of each table-service range to allow for clearing and resetting the table. Estimates; measure your own.",
           "sources": [
             {
               "title": "Resos Academy, Average dining time",
               "url": "https://restaurantbookingsystem.com/academy/glossary/average-dining-time/"
             },
             {
-              "title": "RestoMath estimate"
+              "title": "Restaurant Calculator estimate"
             }
           ],
           "unit": "table",
@@ -11306,7 +11306,7 @@
         },
         "manager.waitQuote": {
           "effective": "2026-09-30",
-          "notes": "Wait quote = parties ahead that need the same table size ÷ tables of that size × average turn time for that size (Tableview), less the tables already on the check. Tableview: pad the quote 5–10 minutes in the guest's favour (their example: 21 minutes is quoted as 25). RestoMath adds 5 minutes and rounds to the nearest 5.",
+          "notes": "Wait quote = parties ahead that need the same table size ÷ tables of that size × average turn time for that size (Tableview), less the tables already on the check. Tableview: pad the quote 5–10 minutes in the guest's favour (their example: 21 minutes is quoted as 25). Restaurant Calculator adds 5 minutes and rounds to the nearest 5.",
           "sources": [
             {
               "title": "Tableview, Restaurant waitlist management",
@@ -11323,14 +11323,14 @@
         },
         "opening.contingency": {
           "effective": "2026-09-30",
-          "notes": "Contingency for overruns, as a % of the setup costs (everything except the working capital reserve and the contingency itself). Guides say 10–20% of the budget and 10–15% on build-out; RestoMath suggests 10%, and 15% for a bare shell, where overruns are most likely. Keep it separate from the working capital reserve.",
+          "notes": "Contingency for overruns, as a % of the setup costs (everything except the working capital reserve and the contingency itself). Guides say 10–20% of the budget and 10–15% on build-out; Restaurant Calculator suggests 10%, and 15% for a bare shell, where overruns are most likely. Keep it separate from the working capital reserve.",
           "sources": [
             {
               "title": "Bellwether Coffee, Coffee shop startup costs (2026)",
               "url": "https://bellwethercoffee.com/blog/coffee-shop-startup-costs"
             },
             {
-              "title": "RestoMath estimate"
+              "title": "Restaurant Calculator estimate"
             }
           ],
           "unit": "table",
@@ -11343,7 +11343,7 @@
         },
         "opening.guide": {
           "effective": "2026-09-30",
-          "notes": "Used by every country. Usual share of the total opening cost (including the working capital reserve and contingency) per budget group and concept. No source publishes all twelve groups by concept: the ranges are RestoMath's estimate, anchored to the survey's medians (construction about half, kitchen and bar equipment a fifth to a third, pre-opening and training about 5%) and the guides' ranges (build-out 30–40%, equipment 15–25%, deposits 5–10%, permits 2–5%, working capital 15–20%). Service, menu and space factors multiply a group's share relative to what the concept already assumes (baseService, baseSpace); deposits also scale by the country's rent.moveIn deposit + advance months ÷ baseDepositMonths. Then all groups are scaled so the midpoints add up to 100% and bounds are rounded to whole percents (OpeningMath.guide).",
+          "notes": "Used by every country. Usual share of the total opening cost (including the working capital reserve and contingency) per budget group and concept. No source publishes all twelve groups by concept: the ranges are Restaurant Calculator's estimate, anchored to the survey's medians (construction about half, kitchen and bar equipment a fifth to a third, pre-opening and training about 5%) and the guides' ranges (build-out 30–40%, equipment 15–25%, deposits 5–10%, permits 2–5%, working capital 15–20%). Service, menu and space factors multiply a group's share relative to what the concept already assumes (baseService, baseSpace); deposits also scale by the country's rent.moveIn deposit + advance months ÷ baseDepositMonths. Then all groups are scaled so the midpoints add up to 100% and bounds are rounded to whole percents (OpeningMath.guide).",
           "sources": [
             {
               "title": "RestaurantOwner.com, Independent Restaurant Cost to Open Survey (2018)",
@@ -11358,7 +11358,7 @@
               "url": "https://bellwethercoffee.com/blog/coffee-shop-startup-costs"
             },
             {
-              "title": "RestoMath estimate"
+              "title": "Restaurant Calculator estimate"
             }
           ],
           "unit": "table",
@@ -11871,7 +11871,7 @@
           "notes": "A generic list; fees vary by country and city.",
           "sources": [
             {
-              "title": "RestoMath default: common registrations for a new restaurant"
+              "title": "Restaurant Calculator default: common registrations for a new restaurant"
             }
           ],
           "unit": "table",
@@ -11943,7 +11943,7 @@
           "notes": "Generic starting values.",
           "sources": [
             {
-              "title": "RestoMath default for the Overtime pay tool"
+              "title": "Restaurant Calculator default for the Overtime pay tool"
             }
           ],
           "unit": "table",
@@ -11963,7 +11963,7 @@
           "notes": "No providers are listed for Rest of the world; the tools work with your own rate.",
           "sources": [
             {
-              "title": "RestoMath default: providers and payment methods shown in the card tools"
+              "title": "Restaurant Calculator default: providers and payment methods shown in the card tools"
             }
           ],
           "unit": "table",
@@ -11991,7 +11991,7 @@
           "notes": "Rest of the world has no legal references.",
           "sources": [
             {
-              "title": "RestoMath default"
+              "title": "Restaurant Calculator default"
             }
           ],
           "unit": "table",
@@ -12017,7 +12017,7 @@
           "notes": "Generic: no tax on rent unless you enter one.",
           "sources": [
             {
-              "title": "RestoMath default: enter the tax your landlord adds"
+              "title": "Restaurant Calculator default: enter the tax your landlord adds"
             }
           ],
           "unit": "percent",
@@ -12028,7 +12028,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -12062,7 +12062,7 @@
           "effective": "2026-01-01",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -12074,7 +12074,7 @@
           "notes": "True where etiquette is to tip on the pre-tax subtotal.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "boolean",
@@ -12086,7 +12086,7 @@
           "notes": "Tip buttons shown in tip tools; an empty list hides tipping.",
           "sources": [
             {
-              "title": "RestoMath default (local custom); editable in Settings"
+              "title": "Restaurant Calculator default (local custom); editable in Settings"
             }
           ],
           "unit": "percent",
@@ -12103,8 +12103,8 @@
     }
   },
   "disclaimer": "Estimates only; not tax or legal advice. Every value lists its official source, effective date and last-verified date.",
-  "publishedAt": "2026-09-30T17:36:00Z",
-  "rulesVersion": "2026.10.01.1",
+  "publishedAt": "2026-10-01T01:05:00Z",
+  "rulesVersion": "2026.10.01.2",
   "schemaVersion": 1,
   "validation": {
     "maxRelativeChange": {
